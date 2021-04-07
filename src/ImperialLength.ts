@@ -12,7 +12,7 @@ export class ImperialLength {
      * @param input Número a almacenar para las conversiones.
      * @param unit Unidad en la que se recibe el parámetro
      */
-    constructor(input: number) {
+    constructor(input: number = 0) {
         //this.setInput(input, unit);
         this.setInches(input);
     }
