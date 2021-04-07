@@ -7,12 +7,11 @@ import {MetricLength} from "./MetricLength";
 export class LengthAdapter extends MetricLength{
     
     /**
-     * Contructor que inicializa el valor. Llama a setInput para funcionar
-     * @param input Número a almacenar para las conversiones.
-     * @param unit Unidad en la que se recibe el parámetro
+     * Contructor que inicializa el valor. Lo almacena en pulgadas
+     * @param imperial Objeto del tipo Imperial sobre el que se trabajara
      */
     constructor(private readonly imperial: ImperialLength) {
-        super(imperial.getInputInInches(), "CENTIMETERS");
+        super(imperial.getInputInInches());
     }
 
     /**

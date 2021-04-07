@@ -8,7 +8,7 @@ import {LengthAdapter} from '../src/LengthAdapter';
 
 describe('Length tests', () => {
     it('inches to km works', () => {
-        let len: ImperialLength = new ImperialLength(39370, "YARDS");
+        let len: ImperialLength = new ImperialLength(39370);
         let adp: LengthAdapter = new LengthAdapter(len);
         expect(adp.getInputInKilometers()).to.be.equal(1);
     });

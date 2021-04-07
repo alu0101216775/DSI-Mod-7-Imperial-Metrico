@@ -1,19 +1,20 @@
-export type ImperialLengthUnits = "MILLES" | "INCHES" | "YARDS" | "FEET";
+//export type ImperialLengthUnits = "MILLES" | "INCHES" | "YARDS" | "FEET";
 
 /**
  * Clase para representar longitudes del sistema imperial
  */
 export class ImperialLength {
     input: number;
-    inputType: ImperialLengthUnits; //Por defecto, se almacena en pulgadas
+    //inputType: ImperialLengthUnits; //Por defecto, se almacena en pulgadas
     
     /**
      * Contructor que inicializa el valor. Llama a setInput para funcionar
      * @param input Número a almacenar para las conversiones.
      * @param unit Unidad en la que se recibe el parámetro
      */
-    constructor(input: number, unit: ImperialLengthUnits) {
-        this.setInput(input, unit);
+    constructor(input: number) {
+        //this.setInput(input, unit);
+        this.setInches(input);
     }
     /**
      * Retorna el valor almacenado en millas
@@ -51,7 +52,7 @@ export class ImperialLength {
      * Cambia el valor del input.
      * @param input Número a almacenar para las conversiones.
      * @param unit Unidad en la que se recibe el parámetro
-     */
+     *
     setInput(input: number, unit: ImperialLengthUnits) {
         this.inputType = "INCHES";
         switch(unit) {
@@ -60,5 +61,38 @@ export class ImperialLength {
             case "YARDS":  this.input = input * 36;     break;
             case "INCHES": this.input = input;          break;
         }
+    }*/
+
+    /**
+     * Cambia el valor del input a uno recibido en millas
+     * @param input 
+     */
+    setMilles(input: number) {
+        this.input = input * 63360;
     }
+
+    /**
+     * Cambia el valor del input a uno recibido en yardas
+     * @param input 
+     */
+    setYards(input: number) {
+        this.input = input * 36;
+    }
+
+    /**
+     * Cambia el valor del input a uno recibido en pies
+     * @param input 
+     */
+    setFeet(input: number) {
+        this.input = input * 12;
+    }
+
+    /**
+     * Cambia el valor del input a uno recibido en pulgadas
+     * @param input 
+     */
+    setInches(input: number) {
+        this.input = input;
+    }
+
 }
