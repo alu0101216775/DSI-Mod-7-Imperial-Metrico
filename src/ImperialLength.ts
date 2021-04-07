@@ -1,19 +1,14 @@
-//export type ImperialLengthUnits = "MILLES" | "INCHES" | "YARDS" | "FEET";
-
 /**
  * Clase para representar longitudes del sistema imperial
  */
 export class ImperialLength {
     input: number;
-    //inputType: ImperialLengthUnits; //Por defecto, se almacena en pulgadas
     
     /**
-     * Contructor que inicializa el valor. Llama a setInput para funcionar
+     * Contructor que inicializa el valor. Llama a setInches para funcionar
      * @param input Número a almacenar para las conversiones.
-     * @param unit Unidad en la que se recibe el parámetro
      */
     constructor(input: number = 0) {
-        //this.setInput(input, unit);
         this.setInches(input);
     }
     /**
@@ -47,21 +42,6 @@ export class ImperialLength {
     getInputInInches(): number {
         return this.input;
     }
-    
-    /**
-     * Cambia el valor del input.
-     * @param input Número a almacenar para las conversiones.
-     * @param unit Unidad en la que se recibe el parámetro
-     *
-    setInput(input: number, unit: ImperialLengthUnits) {
-        this.inputType = "INCHES";
-        switch(unit) {
-            case "MILLES": this.input = input * 63360;  break;
-            case "FEET":   this.input = input * 12;     break;
-            case "YARDS":  this.input = input * 36;     break;
-            case "INCHES": this.input = input;          break;
-        }
-    }*/
 
     /**
      * Cambia el valor del input a uno recibido en millas

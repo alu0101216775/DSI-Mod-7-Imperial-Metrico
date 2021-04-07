@@ -1,5 +1,3 @@
-//export type MetricLengthUnits = "CENTIMETERS" | "METERS" | "KILOMETERS";
-
 /**
  * Clase para representar longitudes del sistema imperial
  */
@@ -37,19 +35,6 @@ export class MetricLength {
     getInputInCentimeters(): number {
         return this.input;
     }
-    
-    /**
-     * Cambia el valor del input.
-     * @param input Número a almacenar para las conversiones.
-     * @param unit Unidad en la que se recibe el parámetro
-     *
-    setInput(input: number, unit: MetricLengthUnits) {
-        switch(unit) {
-            case "KILOMETERS":  this.input = input * 100000;  break;
-            case "METERS":      this.input = input * 100;     break;
-            case "CENTIMETERS": this.input = input;           break;
-        }
-    }*/
 
     /**
      * Cambia el valor del input a uno recibido en centimetros
@@ -64,7 +49,7 @@ export class MetricLength {
      * @param input 
      */
     setMeters(input: number) {
-        this.input = input / 100;
+        this.input = input * 100;
     }
 
     /**
@@ -72,6 +57,6 @@ export class MetricLength {
      * @param input 
      */
     setKilometers(input: number) {
-        this.input = input / 100000;
+        this.input = input * 100000;
     }
 }
